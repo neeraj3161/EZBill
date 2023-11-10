@@ -43,7 +43,8 @@ const BottomTab = () => {
                     <Image source={require("../../assets/icons/store.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>
                     <Text style={{color:focused ? '#e32f45' : '#748c94' , fontSize:12}}>Sales</Text>
                 </View>
-            )
+            ),
+            tabBarStyle:{display:'none'}
         }}/>
         <Tab.Screen name="Inventory" component={Inventory} options={{
             tabBarIcon:({focused})=>(
@@ -73,6 +74,7 @@ const BottomTab = () => {
 
         
     </Tab.Navigator>
+
   )
 }
 

@@ -5,6 +5,8 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList } from 'react
 import React, { useState } from 'react'
 import Dashboard from '../Dashboard/Dashboard';
 
+
+
 const data = [
   { key: 'Profile', screen: 'ProfileScreen' },
   { key: 'Settings', screen: 'SettingsScreen' },
@@ -49,19 +51,10 @@ const Home = ({navigation}) => {
             <TouchableOpacity onPress={setVermMenu}>
               <Image source={require("../../assets/icons/more_vert.png")} width={20} height={25} tintColor={'white'}/>
             </TouchableOpacity>
-            {showhomeMenuVert && 
-            <View style={styles.card}>
-              <TouchableOpacity>
-                <Text style={styles.menuTxt}>Profile</Text>
-                </TouchableOpacity>
-              <TouchableOpacity ><Text style={styles.menuTxt}>Settings</Text></TouchableOpacity>
-              <TouchableOpacity ><Text style={styles.menuTxt}>About</Text></TouchableOpacity>
-              <TouchableOpacity ><Text style={styles.menuTxt}>Contact Us</Text></TouchableOpacity>
-            </View>}
           </View>
 
       </View>
-      <Dashboard/>
+      <Dashboard  showMenu= {showhomeMenuVert}/>
     </View>
   )
 }
