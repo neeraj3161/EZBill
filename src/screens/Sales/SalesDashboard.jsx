@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image , TextInput,ScrollView,
 import React from 'react'
 import SalesItemsCardList from './SalesItemsCardList';
 import SalesBottom from './SalesBottom';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -29,9 +30,9 @@ const SalesDashboard = () => {
 </View>
 
 <SalesBottom/>
-<ScrollView style={{height:windowHeight}}>
-    <SalesItemsCardList/>
-</ScrollView>
+<SafeAreaView style={{height:windowHeight}}>
+    <SalesItemsCardList text={number}/>
+</SafeAreaView>
     </View>
 
   )
