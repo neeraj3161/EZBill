@@ -23,8 +23,6 @@ const Sales = ({navigation,props}) => {
 
 
   const navigations = useNavigation();
-    
-
   return (
     
     

@@ -9,6 +9,8 @@ import Home from '../../screens/Main/Home';
 import Inventory from '../../screens/Main/Inventory';
 import Reports from '../../screens/Main/Reports';
 import Sales from '../../screens/Main/Sales';
+import SalesNavigator from '../StackNavigator/SalesNavigator';
+import StackNavigator from '../StackNavigator/StackNavigator';
 
 
 
@@ -37,7 +39,7 @@ const BottomTab = () => {
                 </View>
             )
         }}/>
-        <Tab.Screen name="Sales" component={Sales} options={{
+        <Tab.Screen name="Sales" component={StackNavigator} options={{
             tabBarIcon:({focused})=>(
                 <View style={{alignItems:'center',justifyContent:'center',top:10}}>
                     <Image source={require("../../assets/icons/store.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>

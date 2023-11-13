@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Home from '../../screens/Main/Home'
 import SalesNavigator from './SalesNavigator'
+import Sales from '../../screens/Main/Sales'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -17,8 +18,8 @@ const StackNavigator = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Sales' component={SalesNavigator}/>
+      <Stack.Screen options={{headerShown:false}} name='Sales' component={Sales}/>
+      
     </Stack.Navigator>
   )
 }
