@@ -10,7 +10,7 @@ import SalesDashboard from '../Sales/SalesDashboard';
 const Sales = ({navigation,props}) => {
 
   //default the window will not be maximized
-  console.log(navigation);
+  
   const [maximizeWindow,setMaximizeWindow] = useState(false);
 
   const setWindowSize = ()=>{

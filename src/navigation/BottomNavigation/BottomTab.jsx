@@ -54,7 +54,8 @@ const BottomTab = () => {
                     <Image source={require("../../assets/icons/inv.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>
                     <Text style={{color:focused ? '#e32f45' : '#748c94' , fontSize:12}}>Inventory</Text>
                 </View>
-            )
+            ),
+            tabBarStyle:{display:'none'}
         }}/>
         <Tab.Screen name="Reports" component={Reports} options={{
             tabBarIcon:({focused})=>(
@@ -62,7 +63,8 @@ const BottomTab = () => {
                     <Image source={require("../../assets/icons/report.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>
                     <Text style={{color:focused ? '#e32f45' : '#748c94' , fontSize:12}}>Reports</Text>
                 </View>
-            )
+            ),
+            tabBarStyle:{display:'none'}
         }}/>
 
 <Tab.Screen name="Sellers" component={Reports} options={{
@@ -71,7 +73,8 @@ const BottomTab = () => {
                     <Image source={require("../../assets/icons/report.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>
                     <Text style={{color:focused ? '#e32f45' : '#748c94' , fontSize:12}}>Sellers</Text>
                 </View>
-            )
+            ),
+            tabBarStyle:{display:'none'}
         }}/>
 
         
