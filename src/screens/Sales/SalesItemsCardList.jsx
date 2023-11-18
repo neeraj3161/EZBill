@@ -89,7 +89,7 @@ const SalesItemsCardList = ({text}) => {
   const keyExtractor = useCallback((item, index) => `${item.id}`, []);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{marginBottom:400}}>
       <View style={{height: '100%'}}>
         <FlashList
           data={data}
