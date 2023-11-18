@@ -1,18 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Home from '../../screens/Main/Home'
-import SalesNavigator from './SalesNavigator'
-import Sales from '../../screens/Main/Sales'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Inventory from '../../screens/Main/Inventory'
+import Profile from '../../screens/Profile/Profile'
+import BottomTab from '../BottomNavigation/BottomTab'
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator>
-      <Stack.Screen options={{headerShown:false}} name='SalesDash' component={Sales}/>
-      <Stack.Screen options={{headerShown:false}} name='InvDash' component={Inventory}/>
+    <Stack.Navigator initialRouteName='Bottom'>
+
+       <Stack.Screen options={{headerShown:false}} name='Bottom' component={BottomTab}/>
+      <Stack.Screen options={{headerShown:false}} name='Profile' component={Profile} />
       
     </Stack.Navigator>
   )

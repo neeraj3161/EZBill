@@ -10,14 +10,29 @@ import React, {useCallback, useEffect, useState} from 'react';
 import dd from '../../data';
 import {FlashList} from '@shopify/flash-list';
 
-const SalesItemsCardList = () => {
+const SalesItemsCardList = ({text}) => {
   const [data, setData] = useState([{}, {}]);
 
+ 
   //getData on first render
 
   useEffect(() => {
     getData();
+
+   
   }, []);
+
+
+  useEffect(() => {
+    const lowercasedSearchTerm = text.toLowerCase();
+
+    const filteredData = dd.filter((data) =>
+      data.name.toLowerCase().includes(lowercasedSearchTerm)
+    );
+
+    setData(filteredData);
+   
+  }, [text]);
 
   //getDummyData
 

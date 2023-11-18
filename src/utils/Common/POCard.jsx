@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, ScrollView, Image, Pressable} from 'react-native';
 
-const InventoryCard = ({ color,backgroundColor,borderLeftColor,name,description,qty,imageSource }) => {
+const POCard = ({ color,backgroundColor,borderLeftColor,name,description,qty,imageSource }) => {
     const cardStyles = {
        color
       };
@@ -20,7 +20,7 @@ const InventoryCard = ({ color,backgroundColor,borderLeftColor,name,description,
           style={styles.img}
         />
         <View style={styles.txtContainer}>
-          <Text style={styles.txt}>{name}</Text>
+          <Text style={[styles.txt,cardStyles]}>{name}</Text>
           <Text style={styles.description}>{description}</Text>
         </View>
 
@@ -39,7 +39,7 @@ const InventoryCard = ({ color,backgroundColor,borderLeftColor,name,description,
     
    
 
-export default InventoryCard;
+export default POCard;
 
 const styles = StyleSheet.create({
       
@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     letterSpacing: 1,
     marginBottom: 5,
-    color:'#000'
   },
   description: {
     color: '#777',
@@ -57,11 +56,12 @@ const styles = StyleSheet.create({
   mainContainer: {
     height: 70,
     borderRadius: 10,
-    marginVertical: 5 ,
+    marginVertical: 10,
     marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
     shadowColor: '#000',
+    borderLeftWidth:5,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
 
   img:{
-    width: 25, height: 25,marginHorizontal:20
+    width: 40, height: 40,padding:10
   },
 
   rightIcon:{
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   qtyTxt:{
     fontWeight:'bold',
     fontFamily:'sans-serif',
-    fontSize:20,
-    padding:20
+    fontSize:30,
+    padding:5
   }
 });

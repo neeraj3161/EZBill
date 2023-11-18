@@ -1,47 +1,50 @@
-
-import { StyleSheet, Text, View, Image , TouchableOpacity,Button,SafeAreaView} from 'react-native'
-import React, { useState,useEffect } from 'react'
+import { StyleSheet, Text, View,TouchableOpacity,Image , TextInput} from 'react-native'
+import React from 'react'
 import { useNavigation } from '@react-navigation/native';
-import SalesDashboard from '../Sales/SalesDashboard';
-import InventoryDashborad from '../Inventory/InventoryDashborad';
+import ProfileDashboard from './ProfileDashboard';
 
-const Inventory = () => {
+
+
+const Profile = () => {
+  
   const navigations = useNavigation();
   return (
+    <>
+    
     <View style={styles.mainContainer}>
     <View style={styles.topNavBar}>
     <TouchableOpacity onPress={()=>{navigations.navigate("Home")}}>
           <Image style={{margin:20, tintColor:'#fff'}} source={require('../../assets/icons/arrow_back.png')} resizeMode='contain' />
           </TouchableOpacity>
       <View>
-          <Text style={styles.brandNameTxt}>Inventory</Text>
+          <Text style={styles.brandNameTxt}>Profile</Text>
         </View>
         <View style={styles.icons}>
-  
-<TouchableOpacity>          
-  <Image style={{margin:20, tintColor:'#fff'}} source={require('../../assets/icons/support.png')} resizeMode='contain'/>
-</TouchableOpacity>
-
+          
+       
         </View>
     </View>
-    <InventoryDashborad/>
-    </View>
-  )
+
+
+    <ProfileDashboard/>
+
+
+  </View>
+    </>
+  );
 }
 
-export default Inventory
+export default Profile
 
 const styles = StyleSheet.create({
   mainContainer:{
-    color:'#000',
-    backgroundColor:'#f8f8f8'
+    color:'#000'
   },
   topNavBar:{
     height:60,
     backgroundColor:'#525FE1',
     alignItems: 'center',
     flexDirection:'row',
-    justifyContent:'space-between',
     
     width:'100%'
   },
@@ -56,6 +59,4 @@ const styles = StyleSheet.create({
   icons:{
     flexDirection:'row'
   }
-
-  
 })

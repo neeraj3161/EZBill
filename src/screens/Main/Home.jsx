@@ -4,7 +4,8 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import Dashboard from '../Dashboard/Dashboard';
-
+import { useNavigation } from '@react-navigation/native';
+import BottomHomeTab from '../../navigation/BottomNavigation/BottomHomeTab';
 
 
 const data = [
@@ -17,9 +18,10 @@ const data = [
 
 
 const Home = ({navigation}) => {
+ 
+
   const [showhomeMenuVert,setShowhomeMenuVert] = useState(false);
-
-
+  const navigations = useNavigation();
   const setVermMenu = ()=>{
     setShowhomeMenuVert(!showhomeMenuVert);
   }
@@ -40,9 +42,9 @@ const Home = ({navigation}) => {
             <Text style={styles.verionTxt}>V1.0.0</Text>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigations.navigate("Profile")}}>
               <View style={{flexDirection:'row'}}>
-              <Text style={styles.shopName}>Gada Salon Wala</Text>
+              <Text style={styles.shopName}>Ez Salon</Text>
               <Image source={require("../../assets/icons/edit.png")} style={{height:13, width:13,position:'relative',top:5,left:5}} tintColor={'#fff'}/>
               </View>
             </TouchableOpacity>

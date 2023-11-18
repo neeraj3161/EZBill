@@ -1,22 +1,23 @@
 //reference video for bottom navigation: https://youtu.be/gPaBicMaib4
 
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { BackHandler,StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { useRoute } from '@react-navigation/native';
 
 //importing screen for navigation
 import Home from '../../screens/Main/Home';
 import Inventory from '../../screens/Main/Inventory';
 import Reports from '../../screens/Main/Reports';
 import Sales from '../../screens/Main/Sales';
-import SalesNavigator from '../StackNavigator/SalesNavigator';
-import StackNavigator from '../StackNavigator/StackNavigator';
 
 
 
 const Tab = createBottomTabNavigator();
 
-const BottomTab = () => {
+const BottomTab = ({navigation,focused}) => {
+    const route = useRoute();
+   
   return (
     <Tab.Navigator screenOptions={{
         tabBarShowLabel:false,
@@ -28,7 +29,8 @@ const BottomTab = () => {
             backgroundColor:'#ffffff',
             borderTopEndRadius:15,
             borderTopLeftRadius:15,
-            height:90
+            height:90,
+            zIndex:0
         }
         }}>
         <Tab.Screen name="Home" component={Home} options={{
@@ -39,7 +41,7 @@ const BottomTab = () => {
                 </View>
             )
         }}/>
-        <Tab.Screen name="Sales" component={StackNavigator} options={{
+        <Tab.Screen name="Sales" component={Sales} options={{
             tabBarIcon:({focused})=>(
                 <View style={{alignItems:'center',justifyContent:'center',top:10}}>
                     <Image source={require("../../assets/icons/store.png")} resizeMode='contain' style={{width:25, height:25, tintColor: focused ? '#e32f45' : '#748c94'}}/>
