@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  Keyboard
 } from 'react-native';
 import React from 'react';
 import SalesItemsCardList from './SalesItemsCardList';
@@ -17,6 +18,8 @@ const SalesDashboard = () => {
     <>
     <View style={{backgroundColor: 'white'}}>
       <View style={styles.salesDashContainer}>
+        <View style={styles.searchContainer}>
+          <Image style={{position:'absolute', tintColor:'#777', width:20,height:20,left:10}} source={require('../../assets/icons/search.png')}/>
         <TextInput
           style={styles.input}
           onChangeText={onChangeText}
@@ -24,7 +27,9 @@ const SalesDashboard = () => {
           placeholder="Quick Search item"
           keyboardType="ascii-capable"
           inlineImageLeft="search.png"
+          onSubmitEditing={Keyboard.dismiss}
         />
+        </View>
         <TouchableOpacity>
           <Image
             source={require('../../assets/icons/sort.png')}
@@ -46,6 +51,10 @@ const SalesDashboard = () => {
 export default SalesDashboard;
 
 const styles = StyleSheet.create({
+  searchContainer:{
+    justifyContent:'center',
+    flexGrow: 2,
+  },
   dashTxt: {
     color: '#525FE1',
     padding: 10,
@@ -68,8 +77,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
-    paddingLeft: 15,
-    flexGrow: 2,
+    paddingLeft: 35,
     borderRadius: 8,
     borderColor: '#D0D4CA',
   },
