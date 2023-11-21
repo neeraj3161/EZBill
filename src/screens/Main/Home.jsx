@@ -20,11 +20,11 @@ const data = [
 const Home = ({navigation}) => {
  
 
-  const [showhomeMenuVert,setShowhomeMenuVert] = useState(false);
+  // const [showhomeMenuVert,setShowhomeMenuVert] = useState(false);
   const navigations = useNavigation();
-  const setVermMenu = ()=>{
-    setShowhomeMenuVert(!showhomeMenuVert);
-  }
+  // const setVermMenu = ()=>{
+  //   setShowhomeMenuVert(!showhomeMenuVert);
+  // }
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -50,13 +50,13 @@ const Home = ({navigation}) => {
             </TouchableOpacity>
             </View>
           <View style={{zIndex:20}}>
-            <TouchableOpacity onPress={setVermMenu}>
-              <Image source={require("../../assets/icons/more_vert.png")} width={20} height={25} tintColor={'white'}/>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Image source={require("../../assets/icons/profile.png")} style={{width:30,height:25}} tintColor={'white'}/>
             </TouchableOpacity>
           </View>
 
       </View>
-      <Dashboard  showMenu= {showhomeMenuVert}/>
+      <Dashboard/>
     </View>
   )
 }
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection:'row',
     justifyContent:'space-between',
-    
+    paddingHorizontal:15,
     width:'100%'
   },
 

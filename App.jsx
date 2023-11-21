@@ -6,6 +6,7 @@ import Profile from './src/screens/Profile/Profile'
 import Home from './src/screens/Main/Home'
 import StackNavigator from './src/navigation/StackNavigator/StackNavigator'
 import StackWithSplash from './src/navigation/StackNavigator/StackWithSplash'
+import "react-native-gesture-handler";
 
 const App = () => {
   return (

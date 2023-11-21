@@ -5,10 +5,10 @@ import SalesReport from './SalesReport'
 import DashCharts from './DashCharts'
 import TransactionDetailsScreen from './TransactionDetailsScreen'
 
-const Dashboard = ({showMenu}) => {
+const Dashboard = () => {
   return (
     <ScrollView >
-      {showMenu && 
+      {/* {showMenu && 
             <View style={styles.card}>
               <TouchableOpacity>
                 <Text style={styles.menuTxt}>Profile</Text>
@@ -16,7 +16,7 @@ const Dashboard = ({showMenu}) => {
               <TouchableOpacity ><Text style={styles.menuTxt}>Settings</Text></TouchableOpacity>
               <TouchableOpacity ><Text style={styles.menuTxt}>About</Text></TouchableOpacity>
               <TouchableOpacity ><Text style={styles.menuTxt}>Contact Us</Text></TouchableOpacity>
-            </View>}
+            </View>} */}
       <TransactionDetailsScreen/>
       <Transactions/>
       <SalesReport/>
