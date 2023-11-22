@@ -7,12 +7,10 @@ import { useNavigation } from '@react-navigation/native';
 const SplashScreen = () => {
     const navigations = useNavigation();
 
-const [load,shouldLoad] = useState(true);
     useEffect(()=>{
         setTimeout(()=>{
-            navigations.navigate("Stack");
+            navigations.navigate("Drawer");
             
-        shouldLoad(false);
         },4000);
       },[])
 

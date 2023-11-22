@@ -13,6 +13,11 @@ const StackWithSplash = () => {
     <Stack.Navigator>
       <Stack.Screen
         options={{headerShown: false}}
+        name="Splash"
+        component={SplashScreen}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
         name="Drawer"
         component={DrawerNavigation}
       />
