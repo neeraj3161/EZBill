@@ -44,8 +44,18 @@ const AddStaffDash = () => {
   return (
     <ScrollView style={{marginBottom:100}}>
 
-<Text>Add option for profile picture</Text>
     <View style={styles.mainContainer}>
+      
+<View style={styles.imgContainer}>
+  <TouchableOpacity activeOpacity={0.8} style={{
+    borderWidth:1,
+    borderColor:'#d7d7d7',width:90,height:90,borderRadius:120,
+    justifyContent:'center',
+    alignItems:'center',marginVertical:20}}>
+  <Image style={styles.profileImg} source={require('../../../assets/icons/profile.png')}/>
+  </TouchableOpacity>
+  <TouchableOpacity><Text style={styles.locateMeTxt}>Profile photo</Text></TouchableOpacity>
+  </View>
     <Text style={styles.label}>Name</Text>
        <TextInput
         style={styles.input}
@@ -124,6 +134,18 @@ const AddStaffDash = () => {
 export default AddStaffDash
 
 const styles = StyleSheet.create({
+  profileImg:{
+    borderRadius:100,
+    height:80,
+    width:80,
+    justifyContent:'center',
+    alignItems:'center',
+    tintColor:'#d7d7d7'
+  },
+  imgContainer:{
+    justifyContent:'center',
+    alignItems:'center',
+  },
     locateMeTxt:{
         color:'#525FE1'
     },

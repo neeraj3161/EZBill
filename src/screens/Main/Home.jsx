@@ -22,9 +22,11 @@ const Home = ({navigation}) => {
 
   // const [showhomeMenuVert,setShowhomeMenuVert] = useState(false);
   const navigations = useNavigation();
+  // console.log(navigations);
   // const setVermMenu = ()=>{
   //   setShowhomeMenuVert(!showhomeMenuVert);
   // }
+  
 
   const renderItem = ({ item }) => (
     <TouchableOpacity

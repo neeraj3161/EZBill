@@ -9,7 +9,7 @@ const SplashScreen = () => {
 
     useEffect(()=>{
         setTimeout(()=>{
-            navigations.navigate("Drawer");
+            navigations.replace("Drawer");
             
         },4000);
       },[])
