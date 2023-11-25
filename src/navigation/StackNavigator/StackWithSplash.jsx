@@ -7,6 +7,10 @@ import SplashScreen from '../../screens/Splash/SplashScreen';
 import DrawerNavigation from '../DrawerNavigation/DrawerNavigation';
 import BottomTab from '../BottomNavigation/BottomTab';
 import Profile from '../../screens/Profile/Profile';
+import AllStaffDash from '../../screens/DrawerScreens/Staff/AllStaffDash';
+import ManageStaffDash from '../../screens/DrawerScreens/Staff/ManageStaffDash';
+import Staff from '../../screens/DrawerScreens/Staff/Staff';
+import AddStaff from '../../screens/DrawerScreens/Staff/AddStaff';
 const StackWithSplash = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -35,6 +39,24 @@ const StackWithSplash = () => {
         options={{headerShown: false}}
         name="Profile"
         component={Profile}
+      />
+
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="AllStaffList"
+        component={AllStaffDash}
+      />
+
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="ManageStaff"
+        component={Staff}
+      />
+
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="AddStaff"
+        component={AddStaff}
       />
     </Stack.Navigator>
   );

@@ -7,16 +7,32 @@ import {
   TextInput,
   Keyboard,
 } from 'react-native';
-import React from 'react';
-import SalesItemsCardList from './SalesItemsCardList';
-import SalesBottom from './SalesBottom';
+import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import StaffListCard from '../../../utils/Common/StaffListCard';
 
-const SalesDashboard = () => {
+const AllStaffDash = () => {
+  const navigation = useNavigation();
   const [text, onChangeText] = React.useState('');
-
   return (
-    <>
-      <View style={{backgroundColor: 'white'}}>
+    <View style={{backgroundColor: 'white'}}>
+      <View style={styles.mainContainer}>
+        <View style={styles.topNavBar}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.replace('ManageStaff');
+            }}>
+            <Image
+              style={{margin: 20, tintColor: '#fff'}}
+              source={require('../../../assets/icons/arrow_back.png')}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <View>
+            <Text style={styles.brandNameTxt}>Staff List</Text>
+          </View>
+          <View style={styles.icons}></View>
+        </View>
         <View style={styles.salesDashContainer}>
           <View style={styles.searchContainer}>
             <Image
@@ -27,7 +43,7 @@ const SalesDashboard = () => {
                 height: 20,
                 left: 10,
               }}
-              source={require('../../assets/icons/search.png')}
+              source={require('../../../assets/icons/search.png')}
             />
             <TextInput
               style={styles.input}
@@ -41,22 +57,18 @@ const SalesDashboard = () => {
           </View>
           <TouchableOpacity>
             <Image
-              source={require('../../assets/icons/sort.png')}
+              source={require('../../../assets/icons/sort.png')}
               style={styles.sortImg}
             />
           </TouchableOpacity>
         </View>
-
-        <SalesItemsCardList text={text} />
       </View>
-      <View style={{position: 'absolute', bottom: 120, width: '100%'}}>
-        <SalesBottom />
-      </View>
-    </>
+      <StaffListCard />
+    </View>
   );
 };
 
-export default SalesDashboard;
+export default AllStaffDash;
 
 const styles = StyleSheet.create({
   searchContainer: {
@@ -88,5 +100,27 @@ const styles = StyleSheet.create({
     paddingLeft: 35,
     borderRadius: 8,
     borderColor: '#D0D4CA',
+  },
+  mainContainer: {
+    color: '#000',
+  },
+  topNavBar: {
+    height: 60,
+    backgroundColor: '#525FE1',
+    alignItems: 'center',
+    flexDirection: 'row',
+
+    width: '100%',
+  },
+
+  brandNameTxt: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: '500',
+    marginLeft: 10,
+  },
+
+  icons: {
+    flexDirection: 'row',
   },
 });
