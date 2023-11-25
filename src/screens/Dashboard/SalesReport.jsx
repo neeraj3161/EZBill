@@ -2,6 +2,7 @@ import { StyleSheet, Text, View , ScrollView} from 'react-native'
 import React from 'react'
 import HorizontalLine from '../../utils/Common/HorizontalLine'
 import CardView from '../../utils/Common/CardView'
+import Colors from '../../utils/Colors'
 
 const SalesReport = () => {
   return (
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         marginBottom:0,
         fontSize:20,
         fontWeight:'500',
-        color:'#525FE1',
+        color:Colors.primary,
         
         fontFamily:'sans'
     

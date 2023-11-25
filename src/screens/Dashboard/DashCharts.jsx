@@ -9,6 +9,7 @@ import {
     StackedBarChart
   } from "react-native-chart-kit";
 import HorizontalLine from '../../utils/Common/HorizontalLine';
+import Colors from '../../utils/Colors';
 
 const DashCharts = () => {
     
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         marginBottom:0,
         fontSize:20,
-        color:'#525FE1',
+        color:Colors.primary,
         
         fontFamily:'sans'
     

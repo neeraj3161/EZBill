@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import Dashboard from '../Dashboard/Dashboard';
 import { useNavigation } from '@react-navigation/native';
 import BottomHomeTab from '../../navigation/BottomNavigation/BottomHomeTab';
+import Colors from '../../utils/Colors';
 
 
 const data = [
@@ -53,7 +54,7 @@ const Home = ({navigation}) => {
             </View>
           <View style={{zIndex:20}}>
             <TouchableOpacity onPress={() => navigation.openDrawer()}>
-              <Image source={require("../../assets/icons/profile.png")} style={{width:30,height:25}} tintColor={'white'}/>
+              <Image source={require("../../assets/icons/hamburger.png")} style={{width:30,height:25}} tintColor={'white'}/>
             </TouchableOpacity>
           </View>
 
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   topNavBar:{
     height:60,
-    backgroundColor:'#525FE1',
+    backgroundColor:Colors.primary,
     alignItems: 'center',
     flexDirection:'row',
     justifyContent:'space-between',

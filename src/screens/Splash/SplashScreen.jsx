@@ -11,7 +11,7 @@ const SplashScreen = () => {
         setTimeout(()=>{
             navigations.replace("Drawer");
             
-        },4000);
+        },2000);
       },[])
 
   return (

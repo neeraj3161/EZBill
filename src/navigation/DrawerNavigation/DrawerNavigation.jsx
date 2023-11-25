@@ -9,6 +9,7 @@ import Customers from '../../screens/DrawerScreens/Customers';
 import GST from '../../screens/DrawerScreens/GST';
 import DrawerContentMain from '../../screens/DrawerScreens/DrawerContentMain';
 import AddStaff from '../../screens/DrawerScreens/Staff/AddStaff';
+import Colors from '../../utils/Colors';
 
 
 const Drawer = createDrawerNavigator();
@@ -16,7 +17,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigation = () => {
   return (
     <Drawer.Navigator screenOptions={{drawerPosition:'right'}}  drawerContent={(props)=><DrawerContentMain{...props}/>}>
-      <Drawer.Screen name='Dashboard' component={BottomTab} options={{headerShown:false, drawerLabelStyle:{color:'tomato'}}}/>
+      <Drawer.Screen name='Dashboard' component={BottomTab} options={{headerShown:false, drawerLabelStyle:{color:Colors.primary}}}/>
       <Drawer.Screen name='Customers' component={Customers} options={{headerShown:false}}/>
       <Drawer.Screen name='Manage Staff' component={Staff} options={{headerShown:false}}/>
       <Drawer.Screen name='Add Staff' component={AddStaff} options={{headerShown:false}}/>
