@@ -1,95 +1,113 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import {FlashList} from '@shopify/flash-list';
 import Colors from '../Colors';
+import {useNavigation} from '@react-navigation/native';
 
 const StaffListCard = () => {
+  const navigation = useNavigation();
   return (
     // Add logic for how long the name and surname should be shown in UI or add ... if its too big
     <View style={styles.staffListCardMain}>
-      <View style={styles.staffListCard}>
-        <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: '90%',
-          }}>
-          <Image
-            style={styles.staffListCardProfile}
-            source={require('../../assets/icons/profile.png')}
-          />
-          <Text style={styles.staffListCardNameTxt}>Aman Choudhary</Text>
-          <View style={styles.status}></View>
-          <TouchableOpacity>
+      <Pressable
+        onPress={() => {
+          navigation.navigate('StaffInfo');
+        }}>
+        <View style={styles.staffListCard}>
+          <View
+            style={{
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              alignItems: 'center',
+              width: '90%',
+            }}>
             <Image
-              style={styles.callLogo}
-              source={require('../../assets/icons/call.png')}
+              style={styles.staffListCardProfile}
+              source={require('../../assets/icons/profile.png')}
             />
-          </TouchableOpacity>
-        </View>
+            <Text style={styles.staffListCardNameTxt}>Aman Choudhary</Text>
+            <View style={styles.status}></View>
+            <TouchableOpacity>
+              <Image
+                style={styles.callLogo}
+                source={require('../../assets/icons/call.png')}
+              />
+            </TouchableOpacity>
+          </View>
 
-        <Image
-          style={styles.right_arrow}
-          source={require('../../assets/icons/right-arrow.png')}
-        />
-      </View>
-
-      <View style={styles.staffListCard}>
-        <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: '90%',
-          }}>
           <Image
-            style={styles.staffListCardProfile}
-            source={require('../../assets/icons/profile.png')}
+            style={styles.right_arrow}
+            source={require('../../assets/icons/right-arrow.png')}
           />
-          <Text style={styles.staffListCardNameTxt}>Aman Choudhary</Text>
-          <View style={styles.status}></View>
-          <TouchableOpacity>
-            <Image
-              style={styles.callLogo}
-              source={require('../../assets/icons/call.png')}
-            />
-          </TouchableOpacity>
         </View>
+      </Pressable>
 
-        <Image
-          style={styles.right_arrow}
-          source={require('../../assets/icons/right-arrow.png')}
-        />
-      </View>
+      <Pressable>
+        <View style={styles.staffListCard}>
+          <View
+            style={{
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              alignItems: 'center',
+              width: '90%',
+            }}>
+            <Image
+              style={styles.staffListCardProfile}
+              source={require('../../assets/icons/profile.png')}
+            />
+            <Text style={styles.staffListCardNameTxt}>Aman Choudhary</Text>
+            <View style={styles.status}></View>
+            <TouchableOpacity>
+              <Image
+                style={styles.callLogo}
+                source={require('../../assets/icons/call.png')}
+              />
+            </TouchableOpacity>
+          </View>
 
-      <View style={styles.staffListCard}>
-        <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: '90%',
-          }}>
           <Image
-            style={styles.staffListCardProfile}
-            source={require('../../assets/icons/profile.png')}
+            style={styles.right_arrow}
+            source={require('../../assets/icons/right-arrow.png')}
           />
-          <Text style={styles.staffListCardNameTxt}>Aman Chosdsdsudhary</Text>
-          <View style={styles.status}></View>
-          <TouchableOpacity>
-            <Image
-              style={styles.callLogo}
-              source={require('../../assets/icons/call.png')}
-            />
-          </TouchableOpacity>
         </View>
+      </Pressable>
 
-        <Image
-          style={styles.right_arrow}
-          source={require('../../assets/icons/right-arrow.png')}
-        />
-      </View>
+      <Pressable>
+        <View style={styles.staffListCard}>
+          <View
+            style={{
+              justifyContent: 'space-around',
+              flexDirection: 'row',
+              alignItems: 'center',
+              width: '90%',
+            }}>
+            <Image
+              style={styles.staffListCardProfile}
+              source={require('../../assets/icons/profile.png')}
+            />
+            <Text style={styles.staffListCardNameTxt}>Aman Chosdsdsudhary</Text>
+            <View style={styles.status}></View>
+            <TouchableOpacity>
+              <Image
+                style={styles.callLogo}
+                source={require('../../assets/icons/call.png')}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <Image
+            style={styles.right_arrow}
+            source={require('../../assets/icons/right-arrow.png')}
+          />
+        </View>
+      </Pressable>
     </View>
   );
 };

@@ -11,6 +11,7 @@ import AllStaffDash from '../../screens/DrawerScreens/Staff/AllStaffDash';
 import ManageStaffDash from '../../screens/DrawerScreens/Staff/ManageStaffDash';
 import Staff from '../../screens/DrawerScreens/Staff/Staff';
 import AddStaff from '../../screens/DrawerScreens/Staff/AddStaff';
+import StaffInfo from '../../screens/DrawerScreens/Staff/StaffInfo';
 const StackWithSplash = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -46,7 +47,11 @@ const StackWithSplash = () => {
         name="AllStaffList"
         component={AllStaffDash}
       />
-
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="StaffInfo"
+        component={StaffInfo}
+      />
       <Stack.Screen
         options={{headerShown: false}}
         name="ManageStaff"
