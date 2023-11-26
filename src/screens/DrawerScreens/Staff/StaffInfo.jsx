@@ -7,7 +7,7 @@ import {
   Button,
   ScrollView,
   Image,
-  Pressable
+  Pressable,
 } from 'react-native';
 import React from 'react';
 import Colors from '../../../utils/Colors';
@@ -52,28 +52,46 @@ const StaffInfo = () => {
         </View>
 
         <Text style={styles.label}>Name</Text>
-        <TextInput style={styles.input}
-          keyboardType="ascii-capable" />
-
-        <View style={styles.rowContainer}>
+        <TextInput style={styles.input} keyboardType="ascii-capable" />
+        <Text style={styles.label}>Customer Handled</Text>
+        <View style={[styles.rowContainer, {justifyContent: 'flex-start'}]}>
           <View style={styles.skrinkedContainer}>
-            <Text style={[styles.label, {
-              marginRight: 20,
-            }]}>Customers Handled(overall)</Text>
+            <Text
+              style={[
+                styles.label,
+                {
+                  marginRight: 20,
+                },
+              ]}>
+              Overall
+            </Text>
             <TextInput
-              style={[styles.input, {
-                marginRight: 10,
-              }]}
+              style={[
+                styles.input,
+                {
+                  marginRight: 10,
+                  width: 100,
+                },
+              ]}
               keyboardType="number-pad"
-              value='100'
+              value="100"
             />
           </View>
           <View style={styles.customersHandeledCurrentMonthContainer}>
-            <Text style={styles.label}>Customers Handled(current month)</Text>
+            <Text
+              style={[
+                styles.label,
+                {
+                  marginRight: 10,
+                  width: 100,
+                },
+              ]}>
+              Monthly
+            </Text>
             <TextInput
               style={styles.input}
               keyboardType="number-pad"
-              value='PAN'
+              value="00"
             />
           </View>
         </View>
@@ -91,30 +109,41 @@ const StaffInfo = () => {
         />
         <View style={styles.rowContainer}>
           <View>
-            <Text style={[styles.label, {
-              marginRight: 20,
-            }]}>Verification Proff</Text>
+            <Text
+              style={[
+                styles.label,
+                {
+                  marginRight: 20,
+                },
+              ]}>
+              Verification Proof
+            </Text>
             <TextInput
-              style={[styles.input, {
-                marginRight: 10,
-              }]}
+              style={[
+                styles.input,
+                {
+                  marginRight: 10,
+                },
+              ]}
               keyboardType="number-pad"
-              value='PAN'
+              value="PAN"
+              editable={false}
             />
           </View>
           <View style={styles.verifyNoContainer}>
             <Text style={styles.label}>Verification no</Text>
             <TextInput
               style={styles.input}
-              keyboardType="number-pad"
-              value='PAN'
+              value="BAUPT2969N"
+              selectTextOnFocus={false}
+              editable={false}
             />
           </View>
         </View>
         <TouchableOpacity
           style={[
             styles.input,
-            { flexDirection: 'row', marginTop: 20, justifyContent: 'center' },
+            {flexDirection: 'row', marginTop: 20, justifyContent: 'center'},
           ]}>
           {/* <Image
             source={require('../../../assets/icons/upload.png')}
@@ -122,6 +151,39 @@ const StaffInfo = () => {
           /> */}
           <Text>View documents</Text>
         </TouchableOpacity>
+        <View style={styles.rowContainer}>
+          <View>
+            <Text
+              style={[
+                styles.label,
+                {
+                  marginRight: 20,
+                },
+              ]}>
+              Staff Location
+            </Text>
+            <TextInput
+              style={[
+                styles.input,
+                {
+                  marginRight: 10,
+                },
+              ]}
+              keyboardType="number-pad"
+              value="Pimpri"
+              editable={false}
+            />
+          </View>
+          <View style={styles.verifyNoContainer}>
+            <Text style={styles.label}>Transfer Staff</Text>
+            <TextInput
+              style={styles.input}
+              value="BAUPT2969N"
+              selectTextOnFocus={false}
+              editable={false}
+            />
+          </View>
+        </View>
       </View>
     </ScrollView>
   );
@@ -191,10 +253,6 @@ const styles = StyleSheet.create({
   verifyNoContainer: {
     flexGrow: 2,
   },
-  customersHandeledCurrentMonthContainer: {
-
-  },
-  skrinkedContainer: {
-
-  },
+  customersHandeledCurrentMonthContainer: {},
+  skrinkedContainer: {},
 });
