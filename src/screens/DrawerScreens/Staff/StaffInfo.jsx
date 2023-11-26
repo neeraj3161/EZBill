@@ -52,8 +52,31 @@ const StaffInfo = () => {
         </View>
 
         <Text style={styles.label}>Name</Text>
-        <TextInput style={styles.input} keyboardType="ascii-capable" />
+        <TextInput style={styles.input}
+          keyboardType="ascii-capable" />
 
+        <View style={styles.rowContainer}>
+          <View style={styles.skrinkedContainer}>
+            <Text style={[styles.label, {
+              marginRight: 20,
+            }]}>Customers Handled(overall)</Text>
+            <TextInput
+              style={[styles.input, {
+                marginRight: 10,
+              }]}
+              keyboardType="number-pad"
+              value='100'
+            />
+          </View>
+          <View style={styles.customersHandeledCurrentMonthContainer}>
+            <Text style={styles.label}>Customers Handled(current month)</Text>
+            <TextInput
+              style={styles.input}
+              keyboardType="number-pad"
+              value='PAN'
+            />
+          </View>
+        </View>
         <Text style={styles.label}>Joining Date</Text>
         <TextInput
           style={styles.input}
@@ -66,6 +89,39 @@ const StaffInfo = () => {
           keyboardType="number-pad"
           placeholder="dd-mm-yyyy"
         />
+        <View style={styles.rowContainer}>
+          <View>
+            <Text style={[styles.label, {
+              marginRight: 20,
+            }]}>Verification Proff</Text>
+            <TextInput
+              style={[styles.input, {
+                marginRight: 10,
+              }]}
+              keyboardType="number-pad"
+              value='PAN'
+            />
+          </View>
+          <View style={styles.verifyNoContainer}>
+            <Text style={styles.label}>Verification no</Text>
+            <TextInput
+              style={styles.input}
+              keyboardType="number-pad"
+              value='PAN'
+            />
+          </View>
+        </View>
+        <TouchableOpacity
+          style={[
+            styles.input,
+            { flexDirection: 'row', marginTop: 20, justifyContent: 'center' },
+          ]}>
+          {/* <Image
+            source={require('../../../assets/icons/upload.png')}
+            style={{ width: 20, height: 20, tintColor: '#777' }}
+          /> */}
+          <Text>View documents</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -127,5 +183,18 @@ const styles = StyleSheet.create({
   },
   mainBtnTxt: {
     color: Colors.white,
+  },
+  rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  verifyNoContainer: {
+    flexGrow: 2,
+  },
+  customersHandeledCurrentMonthContainer: {
+
+  },
+  skrinkedContainer: {
+
   },
 });
