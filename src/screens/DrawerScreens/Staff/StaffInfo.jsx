@@ -7,8 +7,10 @@ import {
   Button,
   ScrollView,
   Image,
+  Pressable
 } from 'react-native';
 import React from 'react';
+import Colors from '../../../utils/Colors';
 
 const StaffInfo = () => {
   return (
@@ -36,6 +38,18 @@ const StaffInfo = () => {
             <Text style={styles.locateMeTxt}>Profile photo</Text>
           </TouchableOpacity>
         </View>
+        <View style={styles.mainBtnContainer}>
+          <Pressable>
+            <View style={styles.revokeAccessBtn}>
+              <Text style={styles.mainBtnTxt}>Revoke App Access</Text>
+            </View>
+          </Pressable>
+          <Pressable>
+            <View style={styles.manageAttendanceBtn}>
+              <Text style={styles.mainBtnTxt}>Manage Attendance</Text>
+            </View>
+          </Pressable>
+        </View>
 
         <Text style={styles.label}>Name</Text>
         <TextInput style={styles.input} keyboardType="ascii-capable" />
@@ -45,14 +59,12 @@ const StaffInfo = () => {
           style={styles.input}
           keyboardType="number-pad"
           placeholder="dd-mm-yyyy"
-          placeholderTextColor={'#525FE1'}
         />
         <Text style={styles.label}>DOB</Text>
         <TextInput
           style={styles.input}
           keyboardType="number-pad"
           placeholder="dd-mm-yyyy"
-          placeholderTextColor={'#525FE1'}
         />
       </View>
     </ScrollView>
@@ -91,5 +103,28 @@ const styles = StyleSheet.create({
   mainContainer: {
     marginHorizontal: 20,
     marginVertical: 20,
+  },
+  mainBtnContainer: {
+    marginVertical: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    height: 50,
+  },
+  revokeAccessBtn: {
+    width: '40%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.danger,
+    borderRadius: 10,
+  },
+  manageAttendanceBtn: {
+    width: '40%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.primary,
+    borderRadius: 10,
+  },
+  mainBtnTxt: {
+    color: Colors.white,
   },
 });
