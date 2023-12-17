@@ -13,7 +13,7 @@ import TransactionDetailsScreen from './TransactionDetailsScreen';
 
 const Dashboard = () => {
   console.log('This should not print repeat');
-  const [privateMode, setPrivateMode] = useState(false);
+  const [privateMode, setPrivateMode] = useState(true);
   return (
     <ScrollView>
       {/* {showMenu && 

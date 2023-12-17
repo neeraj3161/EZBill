@@ -9,7 +9,9 @@ const Colors = {
   black: '#000',
   danger: '#C70039',
   dark_navy: '#213555',
-  yellow:'#FFC436'
+  yellow:'#FFC436',
+  light_blue:'#73e6ff',
+  primary_light:'#979FED'
   
 }
 

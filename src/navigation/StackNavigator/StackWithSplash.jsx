@@ -12,6 +12,9 @@ import ManageStaffDash from '../../screens/DrawerScreens/Staff/ManageStaffDash';
 import Staff from '../../screens/DrawerScreens/Staff/Staff';
 import AddStaff from '../../screens/DrawerScreens/Staff/AddStaff';
 import StaffInfo from '../../screens/DrawerScreens/Staff/StaffInfo';
+import SupplierInfo from '../../screens/Supplier/SupplierInfo';
+import SupplierDash from '../../screens/Supplier/SupplierDash';
+import Supplier from '../../screens/Main/Supplier';
 const StackWithSplash = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -62,6 +65,16 @@ const StackWithSplash = () => {
         options={{headerShown: false}}
         name="AddStaff"
         component={AddStaff}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="SupplierInfo"
+        component={SupplierInfo}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Supplier"
+        component={Supplier}
       />
     </Stack.Navigator>
   );
